@@ -142,6 +142,10 @@ class _RsaSigAlgorithms extends Identifier {
 }
 
 class _EcdsaSigAlgorithms extends Identifier {
+  /// ECDSA using P-256 and SHA-1
+  final sha1 = new AlgorithmIdentifier._("sig/ECDSA/SHA-1",
+      () => new pc.ECDSASigner(new pc.SHA1Digest(), null));
+
   /// ECDSA using P-256 and SHA-256
   final sha256 = new AlgorithmIdentifier._("sig/ECDSA/SHA-256",
       () => new pc.ECDSASigner(new pc.SHA256Digest(), null));
